@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Result</title>
+</head>
+<body>
+    <h1>Search Result</h1>
+
+    {% if user %}
+        <p>Username: {{ user.0 }}</p>
+        <p>Email: {{ user.1 }}</p>
+    {% elif message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form method="get" action="/vulnerable/search/">
+        <label for="username">Search by Username:</label>
+        <input type="text" name="username" id="username" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
+
