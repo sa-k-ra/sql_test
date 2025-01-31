@@ -35,7 +35,7 @@ jobs:
           curl -v http://127.0.0.1:8000/vulnerable/search/
           docker run --rm --privileged --network host -e DEBIAN_FRONTEND=noninteractive -v ${{ runner.temp }}/output:${{ runner.temp }}/output am2501/kalidef /bin/bash -c '
           echo "sqlmap↓"
-          sqlmap -o -u "http://127.0.0.1:8000/vulnerable/search/?username=admin" --delay=0.5 --level=2 --risk=1 --random-agent --tamper=space2comment --output-dir=${{ runner.temp }}/output
+          sqlmap -o -u "http://127.0.0.1:8000/vulnerable/search/?username=admin" --delay=0.5 --level=1 --risk=1 --random-agent --tamper=space2comment --output-dir=${{ runner.temp }}/output
           '
       
       - name: 'Upload Artifact'
