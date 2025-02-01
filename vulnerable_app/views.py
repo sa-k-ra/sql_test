@@ -2,17 +2,17 @@
 from django.http import HttpResponse
 from django.db import connection
 
-def search_user(request):
-    username = request.GET.get('username', '')
+# def search_user(request):
+#     username = request.GET.get('username', '')
     
-    # SQLインジェクションの脆弱性
-    query = f"SELECT * FROM vulnerable_app_user WHERE username = '{username}'"
-    cursor = connection.cursor()
-    cursor.execute(query)
-    results = cursor.fetchall()
+#     # SQLインジェクションの脆弱性
+#     query = f"SELECT * FROM vulnerable_app_user WHERE username = '{username}'"
+#     cursor = connection.cursor()
+#     cursor.execute(query)
+#     results = cursor.fetchall()
 
-    response = f"Users found: {results}"
-    return HttpResponse(response)
+#     response = f"Users found: {results}"
+#     return HttpResponse(response)
 
 # vulnerable_app/views.py
 import sqlite3
