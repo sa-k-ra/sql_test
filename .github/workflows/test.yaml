@@ -37,7 +37,7 @@ jobs:
           echo "nmap↓"
           sudo nmap -sV -T4 -p 7000-9000 127.0.0.1 -oN ${{ runner.temp }}/output/nmap_report.txt -oX ${{ runner.temp }}/output/nmap_report.xml
           echo "sqlmap↓"
-          sqlmap -o -u "http://127.0.0.1:8000/?username=admin" --delay=0.5 --level=1 --risk=1 --random-agent --tamper=space2comment --output-dir=${{ runner.temp }}/output
+          sqlmap -o -u "http://127.0.0.1:8000/" --delay=0.5 --level=1 --risk=1 --random-agent --tamper=space2comment --output-dir=${{ runner.temp }}/output
           '
       
       - name: 'Upload Artifact'
