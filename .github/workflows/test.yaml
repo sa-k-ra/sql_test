@@ -45,4 +45,4 @@ jobs:
         with:
           name: vulnerability_report
           path: ${{ runner.temp }}/output/*
-          ’
+          
