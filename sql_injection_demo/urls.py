@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('vulnerable_app.urls')),
+    path('vulnerable/', include('vulnerable_app.urls')),
 ]
 

@@ -1,20 +1,6 @@
 # vulnerable_app/views.py
 from django.http import HttpResponse
 from django.db import connection
-
-# def search_user(request):
-#     username = request.GET.get('username', '')
-    
-#     # SQLインジェクションの脆弱性
-#     query = f"SELECT * FROM vulnerable_app_user WHERE username = '{username}'"
-#     cursor = connection.cursor()
-#     cursor.execute(query)
-#     results = cursor.fetchall()
-
-#     response = f"Users found: {results}"
-#     return HttpResponse(response)
-
-# vulnerable_app/views.py
 import sqlite3
 from django.shortcuts import render
 
@@ -22,7 +8,7 @@ def search_user(request):
     username = request.GET.get('username', None)
     
     if username:
-        # SQLインジェクションの脆弱性を含んだクエリ（推奨されません！）
+        # SQLインジェクションの脆弱性を含んだクエリ
         query = f"SELECT * FROM vulnerable_app_user WHERE username = '{username}'"
         
         # データベース接続
